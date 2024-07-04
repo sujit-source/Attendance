@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="./">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  
+  
+ 
+  <title>AtWork</title>
+ 
+
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Vendors styles-->
+  <link rel="stylesheet" href="assets/scss/simplebar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="assets/scss/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- We use assets/sthose styles to show code examples, you should remove them in your application.-->
+  <link href="assets/scss/examples.css" rel="stylesheet">
+ 
+  <link href="assets/scss/ads.css" rel="stylesheet">
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/color-modes.js"></script>
+  <link href="assets/scss/sujitui.css" rel="stylesheet">
+<style>
+	.form-control{
+		border-color: #e9ebfa !important;
+	}
+	.text-success {
+    color: #0dcd94 !important;
+}
+  .greenbutton{
+    background: rgba(13, 205, 148, 0.1);
+    color: #0dcd94;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .redbutton{
+    background: rgba(247, 40, 74, 0.1);
+    color: #f7284a;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .yellowbutton{
+	background-color: rgba(255, 173, 0, 0.15) !important;
+    color: #ffad00;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .orangebutton{
+    background-color: rgba(243, 73, 50, 0.1) !important;
+    color: #f34932;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .mybody {
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 25px;
+}
+</style>
+<style>
+  input[type="checkbox"] {
+      cursor: pointer;
+    }
+  [type=search] {
+    
+  
+    outline-offset: 0;
+    outline-color: #cfc7f3;
+}
+#attendance_info{
+	font-size: 14px;
+	color: #263871 !important;
+
+}
+#attendance_paginate .paginate_button {
+      color: #0057ffad !important;
+      border: transparent !important;
+    background-color: white !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    }
+
+
+.dataTables_wrapper .dataTables_length select {
+  outline-color: #0057ffad;
+  background: #f1f4fb;
+  border: 1px solid #6261cc12;
+}
+
+  #attendance_filter{
+    padding: 10px;
+  }
+  #attendance_length{
+    padding: 10px;
+  }
+  #attendance th,
+        #attendance td,
+		#myattendancecard ,
+		.form-label {
+            color: #263871 !important;
+        }
+
+
+
+
+
+		#employeeatendance_info{
+	font-size: 14px;
+	color: #263871 !important;
+
+}
+#employeeatendance_paginate .paginate_button {
+      color: #0057ffad !important;
+      border: transparent !important;
+    background-color: white !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    }
+
+	#employeeatendance_filter{
+    padding: 10px;
+  }
+  #employeeatendance_length{
+    padding: 10px;
+  }
+  
+  #employeeatendance th,
+        #employeeatendance td
+		
+		 {
+            color: #263871 !important;
+			font-size: 14px;
+			padding: 10px 22px !important;
+        }
+  .d-none {
+      display: none !important;
+    }
+    .sidebar-toggler::before {
+   
+    background-color: #fff;
+    }
+	.table th, .text-wrap table th {
+    
+    font-size: 0.875rem;
+    
+}
+.fs-14 {
+    font-size: 14px;
+}
+    .bscj{
+      background: #f1f4fb;
+    }
+    .form-select {
+    
+    background-color: #f1f4fb;
+   
+    border: none;
+    
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #6261cc26;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #f1f4fb;
+    margin-left: 3px;
+}
+</style>
+<style>
+
+  .mycardbody{
+    flex: 1 1 auto;
+    margin: 0;
+    padding: 1.5rem 1.5rem;
+    position: relative;
+  }
+  .bg-success-transparent {
+    background: rgba(13, 205, 148, 0.1);
+    color: #0dcd94;
+}
+.text-secondary {
+    color: #fe7f00 !important;
+}
+.bg-primary-transparent {
+    background: rgba(51, 102, 255, 0.2);
+    color: #3366ff;
+}
+.bg-secondary-transparent {
+    background: rgba(254, 127, 0, 0.1);
+    color: #fe7f00;
+}
+.bg-danger-transparent {
+    background: rgba(247, 40, 74, 0.1);
+    color: #f7284a;
+}
+.text-orange {
+    color: #f34932 !important;
+}
+.icon1 {
+    height: 55px;
+    width: 55px;
+    line-height: 57px;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 24px;
+    
+}
+table.dataTable {
+    
+    border-collapse: collapse;
+	border-color: #e9ebfa !important;
+    
+}
+.border-bottom{
+	border-color: #e9ebfa !important;
+}
+.mytext{
+  color: #263871;
+}
+.mycard{
+  border: none !important;
+}
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #f3f4f7;
+}
+.search-element {
+  position: relative;
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+.header-search {
+  padding-right: 30px; /* Adjust padding to make space for the icon */
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure the icon doesn't interfere with input actions */
+}
+.card{
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+}
+.Succes-atten{
+	text-align: center;
+}
+
+</style>
+<style>
+	.hremp-tabs .tabs-menu1 ul li a {
+border: 0;
+background: #dee5f7;
+border-bottom: 0;
+margin: 0 0.5rem;
+border-radius: 8px 8px 0 0;
+margin-bottom: -1px;
+padding: 12px 22px 12px 22px;
+color: #424e79 !important;
+}
+.hremp-tabs .tabs-menu1 ul li a:hover {
+    color: blue !important;
+}
+.input-group-text {
+    display: block;
+    line-height: 1.5;
+    /* border: none; */
+    border-radius: 0;
+    border-top-left-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+}
+.btn-light{
+	background: #dee5f7;
+}
+  </style>
+</head>
+
+<body>
+  <div class="sidebar sidebar-dark sidebar-fixed border-end" id="sidebar" style="background: #17263a;">
+    <div class="sidebar-header border-bottom">
+      <div class="sidebar-brand">
+        <img class="sidebar-brand-full"  src="assets/img/Logo.png" width="150" height="32">
+        
+          
+        </svg>
+      </div>
+      <button class="header-toggler" type="button"
+        onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+        <svg class="icon icon-lg">
+          <use xlink:href="assets/icons/menu.svg"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
+      <li class="nav-item"><a class="nav-link active" href="index.html">
+          <i class="fa-solid fa-tachometer-alt pe-2"></i> Dashboard</a></li>
+
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-users pe-2"></i> Employee</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Employee</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-note-sticky pe-2"></i> Attendance</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Tna Data Viewer</a></li>
+          <li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Attendance Update </a></li>
+          <li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Leave Entry</a></li>
+
+        </ul>
+      </li>
+
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid  fa-wallet pe-2"></i> Salary</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="forms/form-control.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Salary Data Sheet</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms/select.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Salary Data 1</a></li>
+          <li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Increment and Arrear</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-screwdriver-wrench pe-2"></i> Tools</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Update Data from Tna<span
+                class="badge badge-sm bg-success ms-auto"></span></a></li>
+          <li class="nav-item"><a class="nav-link" ><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Full and Final</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-check-double pe-2"></i> Approvals</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Leaves</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Loan/Advance</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Expenses</a></li>
+
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-gears pe-2"></i>Settings</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Branch and Division</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Department</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Designation</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Shift</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Allowance</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Deduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Holiday</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Configuration</a></li>
+
+
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-regular fa-file pe-2"></i> Reports</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Employee Master Report</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Attendance Report</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Salary Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Leave Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Loan and Advance Report</a></li>
+
+
+
+        </ul>
+      </li>
+      <li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
+          <i class="fa-solid fa-people-roof pe-2"></i>People Management</a>
+        <ul class="nav-group-items compact">
+          <li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> Users</a></li>
+          <li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"><span
+                  class="nav-icon-bullet"></span></span> User role</a></li>
+
+
+
+
+        </ul>
+      </li>
+
+      <li class="nav-divider"></li>
+
+    </ul>
+    <div class="sidebar-footer border-top d-md-flex " style="color: white;">
+      <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+    </div>
+  </div>
+  <div class="wrapper d-flex flex-column min-vh-100">
+    <header class="header header-sticky p-0 ">
+      <div class="container-fluid  px-4">
+        <button class="header-toggler bscj " type="button"
+          onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        
+        <ul class="header-nav d-lg-flex">
+          <li class="nav-item">
+           
+            <div class="search-element">
+              <input type="search" class="form-control header-search" placeholder="Search…" aria-label="Search" tabindex="1" style="
+              background-color: #f1f4fb;    border: none;
+          ">
+              <i class="fas fa-search search-icon"></i>
+            </div>
+            
+          
+        </li>
+          <li class="nav-item"><a class="nav-link d-none" href="#">Users</a></li>
+          <li class="nav-item"><a class="nav-link d-none" href="#">Settings</a></li>
+        </ul>
+        <ul class="header-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">
+              <svg class="icon icon-lg">
+                
+              </svg></a></li>
+          <li class="nav-item"><a class="nav-link" href="#">
+              <svg class="icon icon-lg">
+               
+              </svg></a></li>
+          <li class="nav-item"><a class="nav-link" href="#">
+            <i class="fa-solid fa-bell "style="
+    font-size: 25px;"></i></a></li>
+              <li class="nav-item dropdown">
+                <button class="btn btn-link nav-link py-2 px-2 d-flex align-items-center" type="button" aria-expanded="false" data-coreui-toggle="dropdown">
+                  <svg class="icon icon-lg theme-icon-active">
+                    <i class="fa-solid fa-moon " style="
+    font-size: 25px;
+"></i>
+                    <use xlink:href="vendors/@@coreui/icons/svg/free.svg#cil-contrast"></use>
+                  </svg>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" style="--cui-dropdown-min-width: 8rem;">
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="light">
+                      Light
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-coreui-theme-value="dark">
+                      Dark
+                    </button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item d-flex align-items-center active" type="button" data-coreui-theme-value="auto">
+                     Auto
+                    </button>
+                  </li>
+                </ul>
+              </li>
+        </ul>
+
+        <ul class="header-nav">
+          <li class="nav-item dropdown "><a class="nav-link py-0 pe-0" data-coreui-toggle="dropdown" href="#"
+              role="button" aria-haspopup="true" aria-expanded="false">
+              <div class="avatar avatar-md"><img class="avatar-img" src="assets/img/avatars/8.jpg"
+                  alt="user@@email.com"></div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end pt-0">
+              <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold rounded-top mb-2">Account
+              </div><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Updates<span class="badge badge-sm bg-info ms-2">42</span></a><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Messages<span class="badge badge-sm bg-success ms-2">42</span></a><a class="dropdown-item"
+                href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Tasks<span class="badge badge-sm bg-danger ms-2">42</span></a><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Comments<span class="badge badge-sm bg-warning ms-2">42</span></a>
+              <div class="dropdown-header bg-body-tertiary text-body-secondary fw-semibold my-2">
+                <div class="fw-semibold">Settings</div>
+              </div>
+              <a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                
+                </svg> Profile</a><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                  
+                </svg> Settings</a><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Payments<span class="badge badge-sm bg-secondary ms-2">42</span></a><a class="dropdown-item"
+                href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Projects<span class="badge badge-sm bg-primary ms-2">42</span></a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                 
+                </svg> Lock Account</a><a class="dropdown-item" href="#">
+                <svg class="icon me-2">
+                  
+                </svg> Logout</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </header>
+    <div class="body flex-grow-1 pt-4" style="
+    background: #f1f4fb ;
+">
+      <div class="container-lg px-4">
+
+        <!-- /.row-->
+        <div class="row p-3">
+          <div class="d-flex justify-content-between  mb-1">
+            <div class="card-header mytext p-2"><strong style="font-size: 20px;">Attendance</strong></div>
+            
+            <div class="p-2 "><button class="btn btn-primary" type="button">
+              Mark Attendance
+            </button></div>
+          </div>
+        </div>
+        
+
+
+		<div class="col-xl-12 col-md-12 col-lg-12">
+            <div class="tab-menu-heading hremp-tabs p-0">
+              <div class="tabs-menu1">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs panel-tabs" role="tablist" style="
+    border-bottom: none;
+">
+                  <li class="nav-item ms-1">
+                    <a href="#tab5" class="nav-link active " data-bs-toggle="tab">Attendance Overview</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#tab6" class="nav-link " data-bs-toggle="tab">Attendance ByUser</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="panel-body tabs-menu-body hremp-tabs1 p-0">
+              <div class="tab-content">
+                
+                <div class="tab-pane fade show active " id="tab5">
+					<div class="card" id="myattendancecard">
+						<div class="card-body border-bottom mb-3">
+							<div class="row mt-1">
+								<div class="col-md-6 col-lg-3">
+									<div class="form-group">
+										<label class="form-label">Employee Name:</label>
+										<select class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Employee" tabindex="-1" aria-hidden="true">
+											<option label="Select Employee"></option>
+											<option value="1">Faith Harris</option>
+											<option value="2">Austin Bell</option>
+											<option value="3">Maria Bower</option>
+											<option value="4">Peter Hill</option>
+											<option value="5">Victoria Lyman</option>
+											<option value="6">Adam Quinn</option>
+											<option value="7">Melanie Coleman</option>
+											<option value="8">Max Wilson</option>
+											<option value="9">Amelia Russell</option>
+											<option value="10">Justin Metcalfe</option>
+											<option value="11">Ryan Young</option>
+											<option value="12">Jennifer Hardacre</option>
+											<option value="13">Justin Parr</option>
+											<option value="14">Julia Hodges</option>
+											<option value="15">Michael Sutherland</option>
+										</select>
+										
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-3">
+									<div class="form-group">
+										<label class="form-label">Month:</label>
+										<select class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Month" tabindex="-1" aria-hidden="true">
+											<option label="Select Month"></option>
+											<option value="1">January</option>
+											<option value="2">February</option>
+											<option value="3">March</option>
+											<option value="4">April</option>
+											<option value="5">May</option>
+											<option value="6">June</option>
+											<option value="7">July</option>
+											<option value="8">August</option>
+											<option value="9">September</option>
+											<option value="10">October</option>
+											<option value="11">November</option>
+											<option value="12">December</option>
+										</select>
+										
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-3">
+									<div class="form-group">
+										<label class="form-label">Year:</label>
+										<select class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Year" tabindex="-1" aria-hidden="true">
+											<option label="Select Year"></option>
+											<option value="1">2024</option>
+											<option value="2">2023</option>
+											<option value="3">2022</option>
+											<option value="4">2021</option>
+											<option value="5">2020</option>
+											<option value="6">2019</option>
+											<option value="7">2018</option>
+											<option value="8">2017</option>
+											<option value="9">2016</option>
+											<option value="10">2015</option>
+											<option value="11">2014</option>
+											<option value="12">2013</option>
+											<option value="13">2012</option>
+											<option value="14">2011</option>
+											<option value="15">2019</option>
+											<option value="16">2010</option>
+										</select>
+										
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-3">
+									<div class="form-group mt-3 pt-3">
+										<a href="javascript:void(0);" class="btn btn-primary btn-block" style="
+    width: 100%;
+">Search</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="d-flex mb-6 ">
+								<div class="me-3">
+									<label class="form-label">Note:</label>
+								</div>
+								<div>
+									<span class="badge badge-success-light greenbutton me-2"><i class="fa-regular fa-circle-check"></i> ---&gt; Present</span>
+									<span class="badge badge-danger-light redbutton me-2"><i class="fa-regular fa-circle-xmark"></i> ---&gt; Absent</span>
+									<span class="badge badge-warning-light yellowbutton me-2"><i class="fa fa-star text-warning"></i> ---&gt; Holiday</span>
+									<span class="badge badge-orange-light orangebutton me-2"><i class="fa fa-adjust text-orange"></i>  ---&gt; Half Day</span>
+								</div>
+							</div>
+							<div class="table-responsive hr-attlist">
+								<div id="hr-attendance_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+									
+													
+													
+													<div class="col-sm-12">
+													
+													<table class="
+													table table-vcenter text-nowrap table-bordered border-bottom dataTable no-footer" id="attendance" role="grid" aria-describedby="hr-attendance_info">
+									<thead>
+										<tr role="row"><th class="border-bottom-0 reorder sorting sorting_asc" tabindex="0" aria-controls="hr-attendance" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Employee Name: activate to sort column descending" style="width: 165.031px;">Employee Name</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="1" style="width: 14.5px;">1</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="2" style="width: 14.5px;">2</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="3" style="width: 13.4688px;">3</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="4" style="width: 14.5px;">4</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="5" style="width: 14.5px;">5</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="6" style="width: 14.5px;">6</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="7" style="width: 14.5px;">7</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="8" style="width: 14.5px;">8</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="9" style="width: 14.5px;">9</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="10" style="width: 16.0781px;">10</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="11" style="width: 16.0781px;">11</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="12" style="width: 16.0781px;">12</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="13" style="width: 16.0781px;">13</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="14" style="width: 16.0781px;">14</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="15" style="width: 16.0781px;">15</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="16" style="width: 16.0781px;">16</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="17" style="width: 16.0781px;">17</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="18" style="width: 16.0781px;">18</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="19" style="width: 16.0781px;">19</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="20" style="width: 16.0781px;">20</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="21" style="width: 16.0781px;">21</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="22" style="width: 16.0781px;">22</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="23" style="width: 16.0781px;">23</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="24" style="width: 16.0781px;">24</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="25" style="width: 16.0781px;">25</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="26" style="width: 16.0781px;">26</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="27" style="width: 16.0781px;">27</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="28" style="width: 16.0781px;">28</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="29" style="width: 16.0781px;">29</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="30" style="width: 16.0781px;">30</th><th class="border-bottom-0 w-5 sorting_disabled" rowspan="1" colspan="1" aria-label="31" style="width: 16.0781px;">31</th><th class="border-bottom-0 sorting_disabled" rowspan="1" colspan="1" aria-label="Total" style="width: 44.625px;">Total</th></tr>
+									</thead>
+									<tbody>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+									<tr class="odd">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/11.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Adam Quinn</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">16</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="even">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/5.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Amelia Russell</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">24</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="odd">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/9.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Austin Bell</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">24</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="even">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/1.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Faith Harris</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning " data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange "></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning " data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger "><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger "><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger "><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger "><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning " data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning " data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">21</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="odd">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/2.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Maria Bower</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">17</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="even">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/12.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Max Wilson</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange "></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">21</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="odd">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/4.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Melanie Coleman</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td class="Succes-atten"><span class=" text-danger"><i class="fa-regular fa-circle-xmark"></i></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">23</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="even">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/10.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Peter Hill</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#halfpresentmodal" class="hr-listmodal"></a>
+													<span class="fa fa-adjust text-orange"></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">25</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr><tr class="odd">
+											<td class="reorder sorting_1">
+												<div class="d-flex">
+													<span class="avatar avatar brround me-3" style="background-image: url(https://laravelui.spruko.com/dayone/assets/images/users/3.jpg)"></span>
+													<div class="me-3 mt-0 mt-sm-2 d-block">
+														<h6 class="mb-1 fs-14">Victoria Lyman</h6>
+													</div>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Sunday" aria-label="Sunday"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td class="Succes-atten"><span class="fa fa-star text-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Republic Day" aria-label="Republic Day"></span></td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<div class="Succes-atten">
+													<a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal" class="hr-listmodal"></a>
+													<span class=" text-success "><i class="fa-regular fa-circle-check"></i></span>
+												</div>
+											</td>
+											<td>
+												<h6 class="mb-0">
+													<span class="text-primary">26</span>
+													<span class="my-auto fs-8 font-weight-normal text-muted">/</span>
+													<span class="">31</span>
+												</h6>
+											</td>
+										</tr></tbody>
+								</table></div></div>
+								
+									 
+											</div>
+
+
+											</div>
+										</div>
+							</div>
+						</div>
+					</div>
+                </div>
+                
+                <div class="tab-pane fade " id="tab6">
+					
+						<div class="card">
+							<div class="card-body">
+								<div class="row mb-0 pb-0 pt-2">
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center ">
+										<span class="avatar avatar-md bradius fs-20 bg-primary-transparent">31</span>
+										<h5 class="mb-0 mt-3">Total Working Days</h5>
+									</div>
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center  ">
+										<span class="avatar avatar-md bradius fs-20 bg-success-transparent">24</span>
+										<h5 class="mb-0 mt-3">Present Days</h5>
+									</div>
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center ">
+										<span class="avatar avatar-md bradius fs-20 bg-danger-transparent">2</span>
+										<h5 class="mb-0 mt-3">Absent Days</h5>
+									</div>
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center ">
+										<span class="avatar avatar-md bradius fs-20 bg-warning-transparent">0</span>
+										<h5 class="mb-0 mt-3">Half Days</h5>
+									</div>
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center  ">
+										<span class="avatar avatar-md bradius fs-20 bg-orange-transparent">2</span>
+										<h5 class="mb-0 mt-3">Late Days</h5>
+									</div>
+									<div class="col-md-6 col-lg-2 col-sm-6 text-center ">
+										<span class="avatar avatar-md bradius fs-20 bg-pink-transparent">5</span>
+										<h5 class="mb-0 mt-3">Holidays</h5>
+									</div>
+								</div>
+								<div class="row mt-5">
+									<div class="col-md-12 col-lg-5">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Employee Name:</label>
+													<select class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Employee" tabindex="-1" aria-hidden="true">
+														<option label="Select Employee"></option>
+														<option value="1" selected="">Faith Harris</option>
+														<option value="2">Austin Bell</option>
+														<option value="3">Maria Bower</option>
+														<option value="4">Peter Hill</option>
+														<option value="5">Victoria Lyman</option>
+														<option value="6">Adam Quinn</option>
+														<option value="7">Melanie Coleman</option>
+														<option value="8">Max Wilson</option>
+														<option value="9">Amelia Russell</option>
+														<option value="10">Justin Metcalfe</option>
+														<option value="11">Ryan Young</option>
+														<option value="12">Jennifer Hardacre</option>
+														<option value="13">Justin Parr</option>
+														<option value="14">Julia Hodges</option>
+														<option value="15">Michael Sutherland</option>
+													</select>
+													
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Select Date:</label>
+													<div class="input-group">
+														<div class="input-group-prepend">
+															<div class="input-group-text">
+																<i class="fa-solid fa-calendar"></i>
+															</div>
+														</div><input class="form-control fc-datepicker hasDatepicker" placeholder="DD-MM-YYYY" type="text" id="dp1720081209102">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-5">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Month:</label>
+													<select class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Month" tabindex="-1" aria-hidden="true">
+														<option label="Select Month"></option>
+														<option value="1" selected="">January</option>
+														<option value="2">February</option>
+														<option value="3">March</option>
+														<option value="4">April</option>
+														<option value="5">May</option>
+														<option value="6">June</option>
+														<option value="7">July</option>
+														<option value="8">August</option>
+														<option value="9">September</option>
+														<option value="10">October</option>
+														<option value="11">November</option>
+														<option value="12">December</option>
+													</select>
+													
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="form-label">Year:</label>
+													<select name="attendance" class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Year" tabindex="-1" aria-hidden="true">
+														<option label="Select Year"></option>
+														<option value="1">2024</option>
+														<option value="2">2023</option>
+														<option value="3">2022</option>
+														<option value="4" selected="">2021</option>
+														<option value="5">2020</option>
+														<option value="6">2019</option>
+														<option value="7">2018</option>
+														<option value="8">2017</option>
+														<option value="9">2016</option>
+														<option value="10">2015</option>
+														<option value="11">2014</option>
+														<option value="12">2013</option>
+														<option value="13">2012</option>
+														<option value="14">2011</option>
+														<option value="15">2019</option>
+														<option value="16">2010</option>
+													</select>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-2">
+										<div class="form-group mt-3 pt-3">
+											<a href="javascript:void(0);" class="btn btn-primary btn-block" style="
+		width: 100%;
+	">Search</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<style>
+								.fs-20 {
+    font-size: 20px !important;
+	font-weight: 600;
+}
+.bradius {
+    border-radius: 25%;
+}
+.bg-warning-transparent {
+    background: rgba(251, 197, 24, 0.1);
+    color: #e3b113;
+}
+.bg-orange-transparent {
+    background: rgba(243, 73, 50, 0.1);
+    color: #f34932;
+}
+.bg-pink-transparent {
+    background: rgba(239, 78, 184, 0.1);
+    color: #ef4eb8;
+}
+.badge-pink-light {
+    background-color: rgba(239, 78, 184, 0.1) !important;
+    color: #ef4eb8;
+}
+.badge-orange-light {
+    background-color: rgba(243, 73, 50, 0.1) !important;
+    color: #f34932;
+}
+.progress, .progress-stacked {
+    --cui-progress-height: 0.5rem;
+}
+.holidaybar{
+	background-color: #dce2fc;
+}.latedaybar{
+	background-color: #f34932;
+}
+							</style>
+							<div class="card-body">
+								<div class="table-responsive" >
+									<div  class="dataTables_wrapper dt-bootstrap5 no-footer">
+										
+																<div class="row">
+																	<div class="col-sm
+																	-12">
+																	<table id="employeeatendance" class="table table-vcenter text-nowrap table-bordered border-bottom dataTable n
+																	o-footer" id="emp-attendance" role="grid" aria-describedby="emp-attendance_info">
+										<thead>
+											<tr role="row"><th class="border-bottom-0 sorting" tabindex="0" aria-controls="emp-attendance" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 177.859px;">Date</th><th class="border-bottom-0 sorting" tabindex="0" aria-controls="emp-attendance" rowspan="1" colspan="1" aria-label="Day: activate to sort column ascending" style="width: 180.359px;">Day</th><th class="border-bottom-0 sorting" tabindex="0" aria-controls="emp-attendance" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 274.328px;">Status</th><th class="border-bottom-0 sorting" tabindex="0" aria-controls="emp-attendance" rowspan="1" colspan="1" aria-label="Clock In: activate to sort column ascending" style="width: 156.75px;">Clock In</th><th class="border-bottom-0 sorting" tabindex="0" aria-controls="emp-attendance" rowspan="1" colspan="1" aria-label="Clock Out: activate to sort column ascending" style="width: 159.891px;">Clock Out</th><th class="border-bottom-0 sorting_disabled" rowspan="1" colspan="1" aria-label="Progress" style="width: 151.125px;">Progress</th><th class="border-bottom-0 sorting_disabled" rowspan="1" colspan="1" aria-label="Action" style="width: 120.688px;">Action</th></tr>
+										</thead>
+										<tbody>
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+										<tr class="odd">
+												<td>28-01-2021</td>
+												<td>Thursday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#presentmodal">
+														
+														<i class="fa-solid fa-eye"></i>
+													</a>
+												</td>
+											</tr><tr class="even">
+												<td>27-01-2021</td>
+												<td>Wednesday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="odd">
+												<td>26-01-2021</td>
+												<td>Tuesday</td>
+												<td><span class="badge badge-pink-light">Holiday (Republic Day)</span></td>
+												<td>--</td>
+												<td>--</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar  holidaybar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="even">
+												<td>25-01-2021</td>
+												<td>Monday</td>
+												<td><span class="badge badge-orange-light">Late</span></td>
+												<td>09:50 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar  bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+														<div class="progress-bar latedaybar " role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="odd">
+												<td>24-01-2021</td>
+												<td>Sunday</td>
+												<td><span class="badge badge-pink-light">Holiday (Sunday)</span></td>
+												<td>--</td>
+												<td>--</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar  holidaybar" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="even">
+												<td>23-01-2021</td>
+												<td>Saturday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="odd">
+												<td>22-01-2021</td>
+												<td>Friday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="even">
+												<td>21-01-2021</td>
+												<td>Thursday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="odd">
+												<td>20-01-2021</td>
+												<td>Wednesday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr><tr class="even">
+												<td>19-01-2021</td>
+												<td>Tuesday</td>
+												<td><span class="badge badge-success-light greenbutton">Present</span></td>
+												<td>09:30 AM</td>
+												<td>06:30 PM</td>
+												<td style="vertical-align: middle;">
+													<div class="progress">
+														<div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													  </div>
+												</td>
+												<td>
+													<a class="btn btn-light btn-icon btn-sm" href="javascript:void(0);" data-coreui-toggle="modal" data-coreui-target="#exampleModal">
+														<i class="fa-solid fa-eye"></i>
+														
+													</a>
+												</td>
+											</tr></tbody>
+									</table></div></div>
+									
+								</div>
+							</div>
+						</div>
+
+
+					
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        <!-- /.row-->
+        <div class="row">
+          <div class="col-md-12">
+            
+          </div>
+        </div>
+        <!-- /.col-->
+      </div>
+      <!-- /.row-->
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Attendance Details</h5>
+		  <button type="button" class="btn-close" data-coreui-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+			<div class="row mb-5 mt-4">
+				<div class="col-md-4">
+					<div class="pt-5 text-center">
+						<h6 class="mb-1 fs-16 font-weight-semibold">09:30 AM</h6>
+						<small class="text-muted fs-14">Clock In</small>
+					</div>
+				</div>
+				<div class="col-md-4 text-center">
+					
+						<canvas id="performanceChart" width="88" height="88" style="display: block; box-sizing: border-box; height: 88px; width: 88px;"></canvas>
+						<h6 class="fs-14 font-weight-semibold mt-3">Performance</h6>
+					  
+				</div>
+				<div class="col-md-4">
+					<div class="pt-5 text-center">
+						<h6 class="mb-1 fs-16 font-weight-semibold"> 06:30 PM</h6>
+						<small class="text-muted fs-14">Clock Out</small>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="form-label">IP Address</label>
+				<input type="text" class="form-control" placeholder="225.192.145.1" disabled="">
+			</div>
+			<div class="form-group">
+				<label class="form-label">Working Form</label>
+				<select name="projects" class="form-control custom-select select2 select2-hidden-accessible" disabled="" data-placeholder="Select" tabindex="-1" aria-hidden="true">
+					<option label="Select"></option>
+					<option value="1" selected="">Office</option>
+					<option value="2">Home</option>
+					<option value="3">Others</option>
+				</select>
+			
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:void(0);" class="btn btn-outline-primary" data-bs-dismiss="modal">close</a>
+			<a href="javascript:void(0);" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editmodal" data-bs-dismiss="modal">Edit</a>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <footer class="footer px-4">
+    <div>Sujit </a> © 2024 zorder.</div>
+    <div class="ms-auto">Powered by&nbsp;Sujit UI Components</a></div>
+  </footer>
+  </div>
+  
+  
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+
+  <script src="assets/js/coreui.bundle.min.js"></script>
+  <script src="assets/js/simplebar.min.js"></script>
+  <script>
+    const header = document.querySelector('header.header');
+
+    document.addEventListener('scroll', () => {
+      if (header) {
+        header.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0);
+      }
+    });
+   
+  </script>
+  <!-- Plugins and scripts required by this view-->
+   
+  <script src="assets/js/chart.umd.js"></script>
+  <script src="assets/js/coreui-chartjs.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/carbon.js"></script>
+  <script src="assets/js/dataTables.bootstrap5.js"></script>
+  <script src="assets/js/dataTables.js"></script>
+  <script>
+  </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('#attendance').DataTable();
+  
+});
+$(document).ready(function() {
+	$('#employeeatendance').DataTable();
+  
+});
+
+
+</script>
+<script>
+	$(document).ready(function () {
+	  $('.nav-tabs a').on('click', function (e) {
+		e.preventDefault();
+		$(this).tab('show');
+	  });
+	});
+  </script>
+  <script>
+	const config = (value, color) => ({
+	  type: 'doughnut',
+	  data: {
+		datasets: [{
+		  data: [value, 100 - value],
+		  backgroundColor: [color, '#eaeaea'],
+		  borderWidth: 0
+		}]
+	  },
+	  options: {
+		responsive: true,
+		cutout: '90%',
+		plugins: {
+		  tooltip: {
+			enabled: false
+		  },
+		  legend: {
+			display: false
+		  }
+		}
+	  },
+	  plugins: [{
+		id: 'text',
+		beforeDraw: (chart) => {
+		  const width = chart.width;
+		  const height = chart.height;
+		  const ctx = chart.ctx;
+		  ctx.restore();
+		  const fontSize = (height / 114).toFixed(2);
+		  ctx.font = fontSize + "em sans-serif";
+		  ctx.textBaseline = "middle";
+		  const text = value + '%';
+		  const textX = Math.round((width - ctx.measureText(text).width) / 2);
+		  const textY = height / 2;
+		  ctx.fillStyle = color; // Set the text color to match the chart color
+		  ctx.fillText(text, textX, textY);
+		  ctx.save();
+		}
+	  }]
+	});
+  
+	const attendanceChart = new Chart(
+	  document.getElementById('attendanceChart').getContext('2d'),
+	  config(89, '#3366ff')
+	);
+  
+	const projectsChart = new Chart(
+	  document.getElementById('projectsChart').getContext('2d'),
+	  config(23, '#fe7f00')
+	);
+  
+	const performanceChart = new Chart(
+	  document.getElementById('performanceChart').getContext('2d'),
+	  config(67, '#0dcd94')
+	);
+  </script>
+</body>
+
+</html>
